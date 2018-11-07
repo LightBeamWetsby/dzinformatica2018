@@ -1,0 +1,19 @@
+#include <iostream>
+ 
+unsigned func(unsigned val) {
+    return (val & 1) ? val : 0;
+}
+ 
+unsigned sum(unsigned val) {
+    return (val < 10) ? func(val) : func(val % 10) + sum(val / 10);
+}
+ 
+int main() {
+    unsigned val;
+ 
+    if (std::cin >> val) {
+        std::cout << sum(val) << std::endl;
+    }
+ 
+    return 0;
+}
